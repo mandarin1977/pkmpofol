@@ -9,7 +9,7 @@
                     <span>
                         PKMPofol
                     </span>
-                </NuxtLink> 
+                </NuxtLink>
             </h1>
             <nav class="gnb">
                 <ul>
