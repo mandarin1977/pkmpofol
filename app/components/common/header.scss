@@ -1,0 +1,9 @@
+header.hd{
+    position: sticky;
+    top: 0;
+    .inner{
+        justify-content: space-between;
+        padding-left: 5dvw;
+        padding-right: 5dvw;
+    }
+}
