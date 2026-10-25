@@ -1,9 +1,42 @@
 header.hd{
     position: sticky;
     top: 0;
+    margin-left: 3dvw;
+    margin-right: 3dvw;
+    backdrop-filter: blur(20px);
+    height: 90px;
+    border-radius: 10rem;
     .inner{
+        padding-left: 2dvw;
+        padding-right: 2dvw;
         justify-content: space-between;
-        padding-left: 5dvw;
-        padding-right: 5dvw;
+        height: 100%;
+        align-items: center;
+        
+        .gnb{
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 1.8rem;
+                li{
+                    a{
+                        display: block;
+                        padding: 1rem 2rem;
+                    }
+                }
+            }
+        }
+        .utill{
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                li{
+                    a{
+                        display: block;
+                        padding: 1rem;
+                    }
+                }
+            }
+        }
     }
 }
