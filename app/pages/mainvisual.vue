@@ -29,7 +29,7 @@
             <aside class="rightArea">
                 <figure>
                     <!-- 이미지나 인터렉션 넣을 자리 -->
-                     
+
                 </figure>
             </aside>
         </div>
@@ -37,3 +37,11 @@
 </template>
 <script>
 </script>
+<style scoped>
+.inner{
+    justify-content: space-between;
+}
+.leftArea{
+    
+}
+</style>
