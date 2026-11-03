@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer class="ft">
         <div class="inner">
             <article class="group">
                 <h3>
@@ -24,5 +24,6 @@
         </div>
     </footer>
 </template>
-<script>
+<script setup>
+import './footer.scss';
 </script>
