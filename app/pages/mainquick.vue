@@ -1,14 +1,16 @@
 <template>
     <section class="sct mainQuick">
-        <article v-for="(mainQuickList, idx) in mainQuickLists">
-            <ul>
-                <li>
-                    0{{idx + 1}}
-                </li>
-                <li>{{mainQuickList.mqTit}}</li>
-                <li>{{mainQuickList.mqSct}}</li>
-            </ul>
-        </article>
+        <div class="inner">
+            <article v-for="(mainQuickList, idx) in mainQuickLists">
+                <ul>
+                    <li>
+                        0{{idx + 1}}
+                    </li>
+                    <li>{{mainQuickList.mqTit}}</li>
+                    <li>{{mainQuickList.mqSct}}</li>
+                </ul>
+            </article>
+        </div>
     </section>
 </template>
 <script setup>
