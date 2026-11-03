@@ -1,9 +1,11 @@
 <template>
-    <mainvisual/>
-    <mainquick/>
-    <workview/>
-    <ectwork/>
-    <career/>
+    <main class="mainIdx">
+        <mainvisual/>
+        <mainquick/>
+        <workview/>
+        <ectwork/>
+        <career/>
+    </main>
 </template>
 <script setup>
 import Career from './career.vue';

@@ -14,10 +14,13 @@ html{
     body{
         font-size: 1.6rem;
         font-family: 'SUIT', sans-serif;
-        .inner{
-            max-width: 140rem;
-            width: 100%;
+        main.mainIdx{
+            .inner{
+                max-width: 140rem;
+                width: 100%;
+            }
         }
+
     }
 }
 
