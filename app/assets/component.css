@@ -4,3 +4,8 @@
     max-width: 160rem;
     width: 100%;
 }
+
+.group{
+    display: flex;
+    flex-wrap: wrap;
+}
