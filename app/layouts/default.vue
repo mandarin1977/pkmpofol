@@ -1,6 +1,6 @@
 <template>
 <AppHeader/>
-<main :class="$route === '/' ? 'mainIdx' : '' ">
+<main :class="$route.path === '/' ? 'mainIdx' : 'is-sub'">
     <slot/>
 </main>
 <AppFooter/>
