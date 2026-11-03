@@ -29,7 +29,7 @@
             <aside class="rightArea">
                 <figure>
                     <!-- 이미지나 인터렉션 넣을 자리 -->
-
+                    <img src="/public/noImg.png" alt="noimg">
                 </figure>
             </aside>
         </div>
