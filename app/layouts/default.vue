@@ -1,6 +1,6 @@
 <template>
 <AppHeader/>
-<main>
+<main :class="$route === '/' ? 'mainIdx' : '' ">
     <slot/>
 </main>
 <AppFooter/>
