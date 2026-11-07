@@ -5,4 +5,10 @@ export default defineNuxtConfig({
   css: [
     '@sun-typeface/suit/fonts/static/woff2/SUIT.css',
   ],
+  runtimeConfig: {
+    public: {
+      supabaseUrl: '',
+      supabaseKey: '',
+    },
+  },
 })
