@@ -21,3 +21,20 @@ const mainQuickLists = [
     {mqTit : '금융 SI', mqSct : 'WebSquare 5.0 대규모 업무 화면'}
 ]
 </script>
+<style scoped>
+.mainQuick{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.mainQuick > .inner{
+    justify-content: space-between;
+}
+.mainQuick .inner article{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.mainQuick .inner article ul li{
+    
+}
+</style>

@@ -41,7 +41,29 @@
 .inner{
     justify-content: space-between;
 }
+.mainVisualSct{
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
 .leftArea{
-    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.4dvw;
+}
+.txtarea {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.4dvw;
+}
+.smtxt{
+    font-size: 1.3rem;
+}
+.buttonwrap {
+    display: flex;
+    gap: 1em;
+}
+.rightArea{
+    flex: .5;
 }
 </style>
