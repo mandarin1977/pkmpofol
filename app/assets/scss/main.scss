@@ -14,6 +14,11 @@ html{
     body{
         font-size: 1.6rem;
         font-family: 'SUIT', sans-serif;
+        background-color: #EEF1F4;
+        main{
+                padding-top: 1dvw;
+                min-height: calc(100dvh - (9rem + 1dvw + 7rem));
+        }
         main.mainIdx{
             .inner{
                 max-width: 140rem;
