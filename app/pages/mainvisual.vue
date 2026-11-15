@@ -44,6 +44,7 @@
 .mainVisualSct{
     padding-top: 8rem;
     padding-bottom: 8rem;
+    background: rgb(185, 211, 255);;
 }
 .leftArea{
     flex: 1;
@@ -65,5 +66,11 @@
 }
 .rightArea{
     flex: .5;
+}
+@media screen and (max-width:1400px) {
+    .inner{
+        padding-left: 2dvw;
+        padding-right: 2dvw;
+    }
 }
 </style>
