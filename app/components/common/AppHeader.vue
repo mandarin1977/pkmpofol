@@ -28,7 +28,7 @@
                         </NuxtLink>
                     </li> -->
                     <li aria-label="유틸메뉴" >
-                        <NuxtLink to="/">
+                        <NuxtLink to="/contact">
                             Contact
                         </NuxtLink>
                     </li>
@@ -42,10 +42,11 @@ import './header.scss';
 
 const menus = [
     // {label : 'home', path: '/'},
-    {label : 'About', path: '/projects'},
+    {label : 'About', path: '/about'},
     {label : 'Project', path: '/projects'},
+    {label : 'Career', path:'/career'},
     // {label : 'blog', path: 'https://blog.example.com', external:true},
-    {label : 'contact', path: '/contact'},
+    // {label : 'contact', path: '/contact'},
 ]
 // const utillMenus = [
 //     {label: 'login', path: '/admin/login'},

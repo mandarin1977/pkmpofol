@@ -3,7 +3,7 @@
         <div class="inner">
             <article class="fSide leftArea">
                 <div class="mainBoxtit">
-                    <p>CAREER</p>
+                    <p>CAREERdddd</p>
                     <h2>경력</h2>
                 </div>
             </article>
