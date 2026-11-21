@@ -47,12 +47,15 @@
             </article>
         </div>
         <article class="hero-article">
+            <figure class="hero-duck">
+                <img src="/main/hero-duck.png" alt="오리">
+            </figure>
             <div class="hero-bgtit">
                 ORIFLYING
             </div>
             <figure>
                 <picture>
-                    <img src="/main/hero-fg.png" alt="기본 이미지">
+                    <img src="/main/hero-fg.png" alt="산">
                 </picture>
             </figure>
         </article>
@@ -149,6 +152,10 @@
     top: -19.07856rem; */
     left: 2.3125rem;
     top: 0;
+}
+.hero-article .hero-duck{
+    width: 100%;
+    height: auto;
 }
 
 .hero-bgtit{
