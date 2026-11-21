@@ -22,9 +22,14 @@
             </nav>
             <nav class="utill">
                 <ul>
-                    <li v-for="utill in utillMenus" aria-label="유틸메뉴" :key="utill.path">
+                    <!-- <li v-for="utill in utillMenus" aria-label="유틸메뉴" :key="utill.path">
                         <NuxtLink :to="utill.path">
                             {{utill.label}}
+                        </NuxtLink>
+                    </li> -->
+                    <li aria-label="유틸메뉴" >
+                        <NuxtLink to="/">
+                            Contact
                         </NuxtLink>
                     </li>
                 </ul>
@@ -41,8 +46,8 @@ const menus = [
     {label : 'blog', path: 'https://blog.example.com', external:true},
     {label : 'contact', path: '/contact'},
 ]
-const utillMenus = [
-    {label: 'login', path: '/admin/login'},
-    {label: 'adm', path: '/admin'}
-]
+// const utillMenus = [
+//     {label: 'login', path: '/admin/login'},
+//     {label: 'adm', path: '/admin'}
+// ]
 </script>
