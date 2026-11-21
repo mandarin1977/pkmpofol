@@ -13,7 +13,7 @@ html{
     font-size: 10px;
     body{
         font-size: 1.6rem;
-        background-color: #EEF1F4;
+        background: var(--bg);
         main{
                 min-height: calc(100dvh - (9rem + 1dvw + 7rem));
         }
@@ -22,6 +22,11 @@ html{
                 max-width: 140rem;
                 width: 100%;
                 margin: auto;
+            }
+            .maincontent{
+                display:flex;
+                flex-direction: column;
+                gap: var(--layout-section-gap);
             }
         }
 

@@ -3,11 +3,7 @@
         <div class="inner">
             <article v-for="(mainQuickList, idx) in mainQuickLists">
                 <ul>
-                    <li>
-                        0{{idx + 1}}
-                    </li>
                     <li>{{mainQuickList.mqTit}}</li>
-                    <li>{{mainQuickList.mqSct}}</li>
                 </ul>
             </article>
         </div>
@@ -15,16 +11,21 @@
 </template>
 <script setup>
 const mainQuickLists = [
-    {mqTit : '웹디자인', mqSct : '기획 의도를 화면으로 — 메인/서브 시안,이벤트 페이지'},
-    {mqTit : '웹퍼블리싱', mqSct : '반응형·웹표준·접근성 고려한 마크업'},
-    {mqTit : 'CMS 구축', mqSct : '그누보드·워드프레스·카페24 기반 납품까지'},
-    {mqTit : '금융 SI', mqSct : 'WebSquare 5.0 대규모 업무 화면'}
+    {mqTit : 'Figma'},
+    {mqTit : 'Photoshop'},
+    {mqTit : 'HTML · CSS'},
+    {mqTit : 'jQuery'},
+    {mqTit : 'WebSquare 5.0'},
+    {mqTit : 'Vue 3'},
+    {mqTit : 'WordPress'},
+    {mqTit : 'Gnuboard'},
+    {mqTit : 'Cafe24'},
 ]
 </script>
 <style scoped>
 .mainQuick{
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 2rem;
+    min-height: 5.2rem;
 }
 .mainQuick > .inner{
     justify-content: space-between;
@@ -35,6 +36,9 @@ const mainQuickLists = [
     flex-direction: column;
 }
 .mainQuick .inner article ul li{
-    
+    color: var(--ink-3);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 1.6rem */
 }
 </style>
