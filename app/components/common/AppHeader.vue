@@ -15,7 +15,7 @@
                 <ul>
                     <li v-for="menu in menus" aria-label="메인메뉴" :key="menu.path">
                         <NuxtLink :to="menu.path">
-                            {{menu.label}}
+                            {{menu.label}} 
                         </NuxtLink>
                     </li>
                 </ul>
@@ -41,9 +41,10 @@
 import './header.scss';
 
 const menus = [
-    {label : 'home', path: '/'},
-    {label : 'project', path: '/projects'},
-    {label : 'blog', path: 'https://blog.example.com', external:true},
+    // {label : 'home', path: '/'},
+    {label : 'About', path: '/projects'},
+    {label : 'Project', path: '/projects'},
+    // {label : 'blog', path: 'https://blog.example.com', external:true},
     {label : 'contact', path: '/contact'},
 ]
 // const utillMenus = [
