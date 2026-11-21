@@ -1,8 +1,11 @@
 header.hd{
     position: sticky;
-    top: 1dvw;
-    margin-left: 3dvw;
-    margin-right: 3dvw;
+    top: 0;
+    z-index: 1000;
+    margin-top: 1dvw;
+    margin-bottom: 1dvw;
+    margin-left: 1.5dvw;
+    margin-right: 1.5dvw;
     backdrop-filter: blur(20px);
     height: 90px;
     border-radius: 10rem;
