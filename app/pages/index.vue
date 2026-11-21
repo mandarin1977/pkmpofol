@@ -3,6 +3,7 @@
     <div class="maincontent">
         <mainquick/>
         <appeal/>
+        <numberlist/>
         <workview/>
         <ectwork/>
         <career/>
@@ -20,4 +21,5 @@ import '../assets/common.css';
 import '../assets/scss/main.scss';
 import '../assets/component.css';
 import Appeal from '~/components/maincompo/appeal.vue';
+import Numberlist from '~/components/maincompo/numberlist.vue';
 </script>

@@ -1,7 +1,7 @@
 <template>
     <section class="sct mainQuick">
         <div class="inner">
-            <article v-for="(mainQuickList, idx) in mainQuickLists">
+            <article v-for="(mainQuickList) in mainQuickLists">
                 <ul>
                     <li>{{mainQuickList.mqTit}}</li>
                 </ul>
