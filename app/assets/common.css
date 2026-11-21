@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* font 설정 */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+  /* Color */
+  --bg: #F4F4F1;
+  --surface: #FFFFFF;
+  --surface-muted: #EAEAE6;
+  --line: #DCDCD6;
+  --ink: #111111;
+  --ink-2: #5B5B57;
+  --ink-3: #9A9A94;
+  --dark: #141414;
+  --accent: #FFC928;
+
+  /* Radius */
+  --radius-section: 32px;
+  --radius-card: 24px;
+  --radius-image: 16px;
+  --radius-button: 999px;
+
+  /* Layout */
+  --layout-page: 1440px;
+  --layout-inset: 20px;
+  --layout-fullbleed: 1400px;
+  --layout-content: 1240px;
+  --layout-columns: 12;
+  --layout-gutter: 20px;
+  --layout-section-gap: 160px;
+
+  /* Spacing */
+  --space-0: 0px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+
+  /* Typography: 최종 적용 크기 */
+  --type-hero-display: 245px;
+  --type-contact-display: 220px;
+  --type-h2: 56px;
+  --type-statement: 32px;
+}
+
+/* Figma의 1920 모드에 해당 */
+[data-layout="1920"] {
+  --layout-page: 1920px;
+  --layout-fullbleed: 1880px;
+  --layout-content: 1600px;
+  --layout-gutter: 24px;
+
+  --type-hero-display: 316px;
+  --type-contact-display: 284px;
+  --type-h2: 64px;
+  --type-statement: 36px;
+
+    /* 현재 Figma에서 승인받아 사용한 임시 폰트 */
+  --font-kr: "IBM Plex Sans KR", sans-serif;
+  --font-display: "Inter", sans-serif;
+
+  --hero-weight: 600;
+  --hero-tracking: -0.05em;
+  --hero-leading: 0.85;
+
+  --h2-weight: 500;
+  --h2-tracking: -0.03em;
+  --h2-leading: 1.1;
+
+  --statement-weight: 500;
+  --statement-leading: 1.35;
+
+  --type-body: 16px;
+  --body-leading: 1.6;
+
+  --type-caption: 13px;
+  --caption-tracking: 0.04em;
+  --caption-leading: 1.4;
+
+  --shadow-subtle: 0 1px 2px rgb(0 0 0 / 4%);
+}
+
+*{
+    font-family: "IBM Plex Sans KR", sans-serif;
+}

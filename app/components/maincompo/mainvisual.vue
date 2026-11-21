@@ -1,72 +1,65 @@
 <template>
     <section class="sct mainVisualSct">
         <div class="inner">
-            <aside class="leftArea">
-                <div class="txtarea">
-                    <p class="smtxt">
-                        WEB DESIGNER · WEB PUBLISHER
+            <article class="hero-top">
+                <aside class="hero-left">
+                    <p class="hero-small">
+                        <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="10" viewBox="0 0 9 10" fill="none">
+                            <path d="M4.33 0V10M0 2.5L8.66 7.5M0 7.5L8.66 2.5" stroke="#111111"/>
+                        </svg>
+                        </span>
+                        <small>WEB DESIGNER · WEB PUBLISHER</small>
                     </p>
-                    <h2 class="mainVisualTxt">
-                        디자인하고,<br>
-                        코드로 끝까지 만듭니다.
+                    <h2 class="hero-title">
+                        디자인하고, 코드로 끝까지 만듭니다.
                     </h2>
-                    <p class="scrtxt">
-                        디자인부터 퍼블리싱·CMS 구축·금융 SI까지, 유지보수까지
-                        생각하는 작업 방식
-                    </p>
-                </div>
-                <div class="buttonArea">
-                    <ul class="buttonwrap">
+                    <ul class="hero-btn-wrap">
                         <li>
-                            <NuxtLink to="/">작업보기</NuxtLink>
+                            <NuxtLink to="/projects" class="btn-style1">
+                                <span>작업 보기</span>
+                                <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                        <path d="M0.533203 4.53345H9.86654M5.86654 8.53345L9.86654 4.53345L5.86654 0.533447" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round" stroke="#111111"/>
+                                    </svg>
+                                </i>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/">이력서 PDF</NuxtLink>
+                            <NuxtLink to="/" class="btn-style2">
+                                <span>이력서 PDF</span>
+                            </NuxtLink>
                         </li>
                     </ul>
-                </div>
-            </aside>
-            <aside class="rightArea">
-                <figure>
-                    <!-- 이미지나 인터렉션 넣을 자리 -->
-                    <img src="/noImg.png" alt="나올 이미지">
-                </figure>
-            </aside>
+                </aside>
+                <aside class="hero-right">
+
+                </aside>
+            </article>
         </div>
     </section>
 </template>
 <script>
 </script>
 <style scoped>
+.mainVisualSct{
+    display: flex;
+    height: 63.4375rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-0);
+    background: url('/main/hero-bg.png') lightgray 50% 50% / cover no-repeat;
+}
 .inner{
     justify-content: space-between;
 }
-.mainVisualSct{
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    background: rgb(185, 211, 255);;
-}
-.leftArea{
-    flex: 1;
+.hero-btn-wrap{
     display: flex;
-    flex-direction: column;
-    row-gap: 1.4dvw;
+    width: 50rem;
+    align-items: center;
+    gap: var(--space-12);
 }
-.txtarea {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.4dvw;
-}
-.smtxt{
-    font-size: 1.3rem;
-}
-.buttonwrap {
-    display: flex;
-    gap: 1em;
-}
-.rightArea{
-    flex: .5;
-}
+
 @media screen and (max-width:1400px) {
     .inner{
         padding-left: 2dvw;

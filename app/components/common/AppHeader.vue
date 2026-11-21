@@ -28,8 +28,13 @@
                         </NuxtLink>
                     </li> -->
                     <li aria-label="유틸메뉴" >
-                        <NuxtLink to="/contact">
-                            Contact
+                        <NuxtLink to="/contact" class="btn-style1">
+                            <span>Contact</span>
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <path d="M0.533203 4.53345H9.86654M5.86654 8.53345L9.86654 4.53345L5.86654 0.533447" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round" stroke="#111111"/>
+                                </svg>
+                            </i>
                         </NuxtLink>
                     </li>
                 </ul>
