@@ -6,7 +6,7 @@
                     Selected Work
                 </h2>
                 <ul class="selectTab">
-                    <li v-for="cate in categories">
+                    <li v-for="cate in categories" :key="cate">
                         <button
                         :aria-pressed="act === cate"
                         @click="act = cate"
@@ -52,10 +52,37 @@
                 </aside>
                 <aside>
                     <ul class="workBento">
-                        <li v-for="work in bentoWorks">
-                            <article>
-                                
-                            </article>
+                        <li v-for="work in bentoWorks" :key="work.id">
+                            <NuxtLink :to="work.bindherf">
+                                <ul>
+                                    <li>
+                                        <figure>
+                                            <figcaption>{{work.categories}}</figcaption>
+                                            <picture>
+                                                <img src="" alt="">
+                                            </picture>
+                                        </figure>
+                                    </li>
+                                    <li>
+                                        <h4>{{work.title}}</h4>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            {{work.worktxt}}
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                {{work.worknum}}
+                                            </li>
+                                            <li>
+                                                자세히 ->
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </aside>
@@ -70,12 +97,12 @@
 const categories = ['전체', '디자인', '퍼블리싱', 'CMS 구축', '금융 SI' , 'Front', 'ect', '개인작업']
 const act = ref('전체')
 const works = [
-    { id: 1, title: '부산남구육아종합지원센터 UI 개발', categories: ['퍼블리싱'], worknum: '2026', worktxt: '부산남구육아종합지원센터 홈페이지 화면 구축', featured: true, bindsrc: '/noimg.png' , bindherf: '/projects'},
-    { id: 2, title: 'NH농협 차세대 계정계 UI 퍼블리싱', categories: ['금융 SI'], worknum: 'FINANCIAL SYSTEM · 2026', worktxt: '복잡한 금융 업무 흐름을 이해하고, WebSquare 기반 화면을 일관된 기준으로 구현했습니다.', featured: true, bindsrc: '/noimg.png', bindherf: '/projects' },
-    { id: 3, title: '가온메탈온메탈 홈페이지 구축', categories: ['CMS 구축'], worknum: '2025', worktxt: 'cms기반 울진군체육회 홈페이지 화면 구축', featured: true, bindsrc: '/noimg.png' , bindherf: '/projects'},
-    { id: 4, title: '울진군체육회 홈페이지 UI 퍼블리싱', categories: ['퍼블리싱'], worknum: '2024', worktxt: 'cms기반 울진군체육회 홈페이지 화면 구축',featured: false , bindsrc: '/noimg.png' , bindherf: '/projects'},
+    { id: 1, title: '부산남구육아종합지원센터 UI 개발', categories: ['퍼블리싱'], worknum: '2026', worktxt: '부산남구육아종합지원센터 홈페이지 화면 구축', featured: true, bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 2, title: 'NH농협 차세대 계정계 UI 퍼블리싱', categories: ['금융 SI'], worknum: 'FINANCIAL SYSTEM · 2026', worktxt: '복잡한 금융 업무 흐름을 이해하고, WebSquare 기반 화면을 일관된 기준으로 구현했습니다.', featured: true, bindsrc: '/noImg.png', bindherf: '/projects' },
+    { id: 3, title: '가온메탈온메탈 홈페이지 구축', categories: ['CMS 구축'], worknum: '2025', worktxt: 'cms기반 울진군체육회 홈페이지 화면 구축', featured: true, bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 4, title: '울진군체육회 홈페이지 UI 퍼블리싱', categories: ['퍼블리싱'], worknum: '2024', worktxt: 'cms기반 울진군체육회 홈페이지 화면 구축',featured: false , bindsrc: '/noImg.png' , bindherf: '/projects'},
     { id: 5, title: '이모션가든', categories: ['Front'], worknum: '2024', featured: true , worktxt: '하루 일기 3줄을 적고 감정분석하면 ai가 감정을 분석하고 나서 꽃이 나오는 감정일기앱', bindsrc: '/noimg.png' , bindherf: '/projects'},
-    { id: 6, title: 'Vdesk', categories: ['퍼블리싱'], worknum: '2025', featured: false , worktxt: 'Vdesk - 웹 구동 페이지 ui제작', bindsrc: '/noimg.png' , bindherf: '/projects'},
+    { id: 6, title: 'Vdesk', categories: ['퍼블리싱'], worknum: '2025', featured: false , worktxt: 'Vdesk - 웹 구동 페이지 ui제작', bindsrc: '/noImg.png' , bindherf: '/projects'},
 ]
 const filtered = computed(() =>
     act.value === '전체'
@@ -84,7 +111,9 @@ const filtered = computed(() =>
 )
 const featuredWork = computed(() => filtered.value.find(w => w.featured))
 const bentoWorks = computed(() =>
-  filtered.value.filter(w => w !== featuredWork.value)
+  filtered.value
+  .filter(w => w !== featuredWork.value)
+  .slice(0, 6)
 )
 </script>
 <style scoped>
@@ -177,4 +206,25 @@ const bentoWorks = computed(() =>
     max-width: 60%;
 }
 .rightArea *{width: 100%;height: 100%;object-fit: cover;}
+
+.workBento {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+.workBento > li > a > ul{
+    display: flex;
+    padding: 1rem;
+    min-height: 25.02438rem;
+    flex-direction: column;
+    gap: 1.125rem;
+    border-radius: 1.75rem;
+    background: #FFF;
+}
+.workBento > li > a > ul > li > figure{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 237/150;
+}
 </style>
