@@ -16,11 +16,13 @@
                         together.
                     </h3>
                 </aside>
-                <ul>
-                    <li>
-                        <input type="text">
-                        <label for=""></label>
-                        <button class="btn-style1">
+                <ul class="contact-bottom">
+                    <li class="contact-input">
+                        <div class="inputwr">
+                            <input type="text">
+                            <label for=""></label>
+                        </div>
+                        <button class="btn-style1 inputsbmint">
                             <span>메일 보내기</span>
                             <i>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
@@ -30,10 +32,10 @@
                         </button>
                     </li>
                     <li>
-                        <NumxtLink to="">github Link</NumxtLink>
+                        <NuxtLink to="/" class="btn-style2">github Link</NuxtLink>
                     </li>
                     <li>
-                        <NumxtLink to="">이력서 PDF</NumxtLink>
+                        <NuxtLink to="/" class="btn-style2">이력서 PDF</NuxtLink>
                     </li>
                 </ul>
             </article>
@@ -46,12 +48,15 @@
 .contactsct{
     margin-left: 1.5dvw;
     margin-right: 1.5dvw;
-    background: blanchedalmond;
+    padding-top: 2dvw;
+    padding-bottom: 2dvw;
+    background: url('/main/contact-photo.png') lightgray 50% / 100% 100% no-repeat;
     border-radius: var(--radius-section);
 }
 .card{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .bannerTit{
     display: flex;
@@ -60,11 +65,39 @@
     gap: var(--space-32);
 }
 .bannerTit h3{
-color: var(--ink);
-font-size: var(--type-contact-display);
-font-style: normal;
-font-weight: 600;
-line-height: 85%; /* 15.0875rem */
-letter-spacing: -0.8875rem;    
+    color: var(--ink);
+    font-size: var(--type-contact-display);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 85%; /* 15.0875rem */
+    letter-spacing: -0.8875rem;    
+}
+.contact-bottom{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 6rem;
+}
+.contact-bottom .contact-input{
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 1rem .5rem;
+    border-radius: 3rem;
+}
+.contact-bottom .contact-input .inputwr{
+    width: calc(100% - 150px);
+    height: 100%;
+}
+.contact-bottom .contact-input .inputwr input{
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+    border-radius: 3rem;
+}
+.contact-bottom li:nth-child(2){
+    margin-left: auto;
+    margin-right: 1rem;
 }
 </style>

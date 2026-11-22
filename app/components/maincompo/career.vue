@@ -59,7 +59,7 @@ const careers = [
 .inner{
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-48);
+    row-gap: 9.95831rem;
 }
 .rightArea{
     width: 100%;;

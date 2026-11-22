@@ -5,6 +5,9 @@ button{
     cursor: pointer;
     border: none;
 }
+input{
+    border: none;
+}
 .inner{
     display: flex;
     flex-wrap: wrap;

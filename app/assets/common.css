@@ -27,7 +27,7 @@
   --layout-content: 1240px;
   --layout-columns: 12;
   --layout-gutter: 20px;
-  --layout-section-gap: 160px;
+  --layout-section-gap: 15dvw;
 
   /* Spacing */
   --space-0: 0px;

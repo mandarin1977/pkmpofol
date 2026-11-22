@@ -120,7 +120,7 @@ const bentoWorks = computed(() =>
 )
 </script>
 <style scoped>
-.inner{flex-direction: column;}
+.inner{flex-direction: column;row-gap: 2rem;}
 .selectTab{
     display: flex;
     justify-content: flex-end;

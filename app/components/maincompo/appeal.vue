@@ -51,7 +51,8 @@ const candos = [
 
 </script>
 <style scoped>
-.inner{flex-direction: column;}
+.inner{flex-direction: column;width: 100%;align-items: start;row-gap: 9.95831rem;}
+.appealpointul{width: 100%;}
 .appealpointul ul{display: grid;grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));gap: 2.4rem;}
 
 </style>
