@@ -47,19 +47,20 @@
             </article>
         </div>
         <article class="hero-article">
-            <figure class="hero-duck">
-                <img src="/main/hero-duck.png" alt="오리">
+            <figure class="hero-bg">
+                <img src="/main/hero-bg.png" alt="배경">
             </figure>
             <div class="hero-bgtit">
                 ORIFLYING
             </div>
-            <figure>
-                <picture>
-                    <img src="/main/hero-fg.png" alt="산">
-                </picture>
+            <figure class="hero-fg">
+                <img src="/main/hero-fg.png" alt="산">
+            </figure>
+            <figure class="hero-duck">
+                <img src="/main/hero-duck.png" alt="오리">
             </figure>
         </article>
-    </section>
+    </section> 
 </template>
 <script>
 </script>
@@ -68,7 +69,8 @@
     display: flex;
     margin-left: 1.5dvw;
     margin-right: 1.5dvw;
-    height: 101.5rem;
+    aspect-ratio: 1880 / 1015;
+    container-type: inline-size;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-0);
@@ -142,29 +144,27 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url('/main/hero-bg.png') lightgray 50% / 100% 100% no-repeat;
     clip-path: border-box;
 }
 
 .hero-article img{
     position: absolute;
-    /* left: 1.3125rem;
-    top: -19.07856rem; */
-    left: 2.3125rem;
-    top: 0;
-}
-.hero-article .hero-duck{
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 100%;
 }
+
 
 .hero-bgtit{
     color: rgba(42, 121, 208, 0.50);
     /* ORI v2/hero-display-fitted */
-    -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: #FFF;
     font-family: Inter;
-    font-size: 245pt;
+    font-size: 17.4cqi;          /* 245pt ≈ 326px ÷ 1880 */
+    -webkit-text-stroke-width: 0.2cqi;
+    white-space: nowrap;
     font-style: normal;
     font-weight: 800;
     line-height: 85%; /* 16.7875rem */
