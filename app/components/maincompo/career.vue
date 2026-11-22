@@ -24,22 +24,20 @@
                        기획과 운영 사이의 연결을 이해합니다.
                     </span>
                 </h2>
-                <div class="appealsct">
-                    <p>SERVICES / 01—04</p>
-                </div>
             </article>
             <article class="fSide rightArea">
                 <ul class="careerUl">
                     <li v-for="career in careers">
                        <dl>
-                            <dd>
+                            <dd class="careerDate">
                                 {{career.careerDate}}
                             </dd>
-                            <dd>
-                                <dl>
-                                    <dt>{{career.careerTit}}</dt>
-                                    <dd>{{career.careerScript}}</dd>
-                                </dl>
+                            <dt class="careerTit">
+                                <b>{{career.careerTit}}</b>
+                                <span v-if="career.careerTit === '소프트보울'">현재</span>
+                            </dt>
+                            <dd class="careerScript">
+                                {{career.careerScript}}
                             </dd>
                        </dl>
                     </li>
@@ -57,6 +55,52 @@ const careers = [
     {careerDate : '2023.10 — 2024.12' , careerTit :  '부산인터넷방송국', careerScript : '웹디자인 · 웹퍼블리싱'}
 ]
 </script>
-<style>
-
+<style scoped>
+.inner{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-48);
+}
+.rightArea{
+    width: 100%;;
+}
+.careerUl > li > dl{
+    display: grid;
+    grid-template-columns: 20% 30% auto;
+    padding: var(--space-32) 0;
+    align-items: center;
+    gap: var(--layout-gutter);
+    border-top: 1px solid var(--line);
+}
+.careerUl > li > dl .careerDate{
+    color: var(--ink-2);
+    /* ORI v2/caption */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.1375rem */
+    letter-spacing: 0.0325rem;
+    text-transform: uppercase;
+}
+.careerUl > li > dl .careerTit b{
+    color: var(--ink);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 1.6rem */
+}
+.careerUl > li > dl .careerTit span{
+    padding: var(--space-8) var(--space-12);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-0);
+    flex-shrink: 0;
+    border-radius: var(--radius-button);
+    background: var(--accent);
+}
+.careerUl > li > dl .careerScript{
+    color: var(--ink-2);
+    /* ORI v2/body */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 1.6rem */
+}
 </style>

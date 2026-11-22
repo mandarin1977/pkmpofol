@@ -3,6 +3,7 @@ a{
 }
 button{
     cursor: pointer;
+    border: none;
 }
 .inner{
     display: flex;
