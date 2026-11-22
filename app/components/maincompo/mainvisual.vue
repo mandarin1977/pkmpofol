@@ -181,4 +181,25 @@
         padding-right: 2dvw;
     }
 }
+@media screen and (max-width:768px) {
+    .hero-title{
+        font-size: 1.5em;
+    }
+    .hero-top{
+        flex-direction: column;
+        row-gap: 1em;
+    }
+
+}
+@media screen and (max-width:650px) {
+    .mainVisualSct{
+        aspect-ratio: 1880 / 1500;
+    }
+    .hero-right .now{
+        max-width: none;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+}
 </style>

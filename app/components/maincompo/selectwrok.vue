@@ -50,7 +50,7 @@
                         </figure>
                     </div>
                 </aside>
-                <aside>
+                <aside class="workList">
                     <ul class="workBento">
                         <li v-for="work in bentoWorks" :key="work.id">
                             <NuxtLink :to="work.bindherf">
@@ -226,11 +226,18 @@ const bentoWorks = computed(() =>
   /* aspect-ratio 삭제 */
 }
 .rightArea img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
+.workList{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
 .workBento {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(3, minmax(300px, 1fr));
+    width: 100%;
 }
 
 .workBento > li > a > ul{
@@ -289,6 +296,11 @@ const bentoWorks = computed(() =>
     .selectTab{
         flex-wrap: wrap;
         flex-shrink: unset;
+    }
+}
+@media (max-width: 650px) {
+    .workFocus{
+        flex-direction: column;
     }
 }
 </style>

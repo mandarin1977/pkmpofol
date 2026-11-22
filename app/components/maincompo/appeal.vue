@@ -43,9 +43,9 @@
 <script setup>
 const candos = [
     {id: 1, num:'01', imgsrc:'/noImg.png', tit:'웹디자인', text:'사용자의 흐름을 화면으로 설계하고, 브랜드의 인상을 일관되게 만듭니다.'},
-    {id: 2, num:'02', imgsrc:'/noImg.png', tit:'웹디자인', text:'사용자의 흐름을 화면으로 설계하고, 브랜드의 인상을 일관되게 만듭니다.'},
-    {id: 3, num:'03', imgsrc:'/noImg.png', tit:'웹디자인', text:'사용자의 흐름을 화면으로 설계하고, 브랜드의 인상을 일관되게 만듭니다.'},
-    {id: 4, num:'04', imgsrc:'noImg.png', tit:'웹디자인', text:'사용자의 흐름을 화면으로 설계하고, 브랜드의 인상을 일관되게 만듭니다.'},
+    {id: 2, num:'02', imgsrc:'/noImg.png', tit:'웹퍼블리싱', text:'반응형과 접근성을 고려해, 유지보수하기 좋은 화면을 구현합니다.'},
+    {id: 3, num:'03', imgsrc:'/noImg.png', tit:'CMS 구축', text:'운영자가 직접 관리할 수 있도록, 콘텐츠와 관리 구조를 연결합니다.'},
+    {id: 4, num:'04', imgsrc:'noImg.png', tit:'금융 SI', text:'복잡한 업무 흐름을 이해하고, 일관된 기준으로 화면을 구현합니다.'},
 ]
 
 
