@@ -1,6 +1,9 @@
 a{
     color: var(--dark);
 }
+button{
+    cursor: pointer;
+}
 .inner{
     display: flex;
     flex-wrap: wrap;
@@ -53,6 +56,29 @@ a{
 .btn-style2 span{
     color: var(--ink);
     /* ORI v2/body-medium */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 1.6rem */
+}
+
+.btn-style3{
+    display: flex;
+    padding: var(--space-12) var(--space-20);
+    align-items: flex-start;
+    border-radius: var(--radius-button);
+    border: 1px solid var(--line);
+}
+.btn-style3.on{
+    background: var(--dark);
+}
+.btn-style4{
+    display: flex;
+    padding: var(--space-8) var(--space-24);
+    align-items: center;
+    gap: var(--space-20);
+    border-radius: var(--radius-button);
+    border: 1px solid var(--line);
+    color: var(--surface);
     font-style: normal;
     font-weight: 500;
     line-height: 160%; /* 1.6rem */
