@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
-  /* Color */
+  /* ── Color ── */
   --bg: #F4F4F1;
   --surface: #FFFFFF;
   --surface-muted: #EAEAE6;
@@ -14,57 +14,47 @@
   --dark: #141414;
   --accent: #FFC928;
 
-  /* Radius */
-  --radius-section: 32px;
-  --radius-card: 24px;
-  --radius-image: 16px;
-  --radius-button: 999px;
+  /* ── Radius: 모바일에서 살짝 줄어듦 ── */
+  --radius-section: clamp(20px, 1.7vw, 32px);
+  --radius-card:    clamp(16px, 1.25vw, 24px);
+  --radius-image:   clamp(12px, 0.85vw, 16px);
+  --radius-button:  999px;
 
-  /* Layout */
-  --layout-page: 1440px;
-  --layout-inset: 20px;
-  --layout-fullbleed: 1400px;
-  --layout-content: 1240px;
-  --layout-columns: 12;
-  --layout-gutter: 20px;
-  --layout-section-gap: 15dvw;
+  /* ── Layout ── */
+  --layout-inset:   clamp(12px, 1.05vw, 20px);   /* 히어로·컨택트 바깥 여백 */
+  --layout-padding: clamp(20px, 4vw, 80px);      /* .inner 좌우 패딩 */
+  --layout-content: 1400px;   /* .inner 바깥 폭 (패딩 포함) → 콘텐츠 1240 */
+  --layout-padding: clamp(20px, 4vw, 80px);
+  --layout-section-gap: clamp(80px, 11vw, 160px);
 
-  /* Spacing */
+  /* ── Spacing: 작은 값은 고정, 큰 값만 유동 ── */
   --space-0: 0px;
   --space-8: 8px;
   --space-12: 12px;
   --space-16: 16px;
   --space-20: 20px;
   --space-24: 24px;
-  --space-32: 32px;
-  --space-40: 40px;
-  --space-48: 48px;
-  --space-64: 64px;
-  --space-80: 80px;
+  --space-32: clamp(24px, 1.7vw, 32px);
+  --space-40: clamp(24px, 2.1vw, 40px);
+  --space-48: clamp(28px, 2.5vw, 48px);
+  --space-64: clamp(40px, 3.4vw, 64px);
+  --space-80: clamp(48px, 4.2vw, 80px);
 
-  /* Typography: 최종 적용 크기 */
-  --type-hero-display: 245px;
-  --type-contact-display: 220px;
-  --type-h2: 56px;
-  --type-statement: 32px;
-}
-
-/* Figma의 1920 모드에 해당 */
-[data-layout="1920"] {
-  --layout-page: 1920px;
-  --layout-fullbleed: 1880px;
-  --layout-content: 1600px;
-  --layout-gutter: 24px;
-
-  --type-hero-display: 316px;
-  --type-contact-display: 284px;
-  --type-h2: 64px;
-  --type-statement: 36px;
-
-    /* 현재 Figma에서 승인받아 사용한 임시 폰트 */
+  /* ── Font ── */
   --font-kr: "IBM Plex Sans KR", sans-serif;
   --font-display: "Inter", sans-serif;
 
+  /* ── Type size ── */
+  /* 히어로·컨택트 거대 타이포: 컨테이너 폭 비례 (해당 섹션에 container-type: inline-size 필요) */
+  --type-hero-display:    17.4cqi;
+  --type-contact-display: 15.4cqi;
+
+  --type-h2:        clamp(32px, 20px + 2.4vw, 64px);   /* 390→32 / 1440→55 / 1920→64 */
+  --type-statement: clamp(22px, 14px + 1.2vw, 36px);   /* 390→22 / 1440→31 / 1920→36 */
+  --type-body: 16px;
+  --type-caption: 13px;
+
+  /* ── Type detail ── */
   --hero-weight: 600;
   --hero-tracking: -0.05em;
   --hero-leading: 0.85;
@@ -76,14 +66,17 @@
   --statement-weight: 500;
   --statement-leading: 1.35;
 
-  --type-body: 16px;
   --body-leading: 1.6;
 
-  --type-caption: 13px;
   --caption-tracking: 0.04em;
   --caption-leading: 1.4;
 
+  /* ── Effect ── */
   --shadow-subtle: 0 1px 2px rgb(0 0 0 / 4%);
+}
+
+@media (min-width: 1700px) {
+  :root { --layout-content: 1760px; }   /* 1600 + 80×2 → 콘텐츠 1600 (1920 시안) */
 }
 
 *{

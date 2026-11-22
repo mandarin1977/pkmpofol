@@ -279,4 +279,16 @@ const bentoWorks = computed(() =>
     justify-content: space-between;
     align-items: center;
 }
+
+@media (max-width: 1080px) {
+    .workBento {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+@media (max-width: 810px) {
+    .selectTab{
+        flex-wrap: wrap;
+        flex-shrink: unset;
+    }
+}
 </style>

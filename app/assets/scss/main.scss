@@ -29,9 +29,11 @@ html{
                 gap: var(--layout-section-gap);
                 .sct{
                     .inner{
-                        max-width: 140rem;
+                        max-width:var(--layout-content);
                         width: 100%;
                         margin: auto;
+                        padding-inline: var(--layout-padding);
+                        margin-inline: auto;
                         .mainBoxtit{
                             display: flex;
                             flex-direction: column;
