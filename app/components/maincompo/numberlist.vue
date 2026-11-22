@@ -77,5 +77,9 @@ const numberlists = [
     font-weight: 500;
     line-height: 110%; /* 4.4rem */
     letter-spacing: -0.12rem;
+    text-align: center;
+}
+.numlistul > ul > li > p{
+    text-align: center;
 }
 </style>

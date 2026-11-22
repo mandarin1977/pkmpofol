@@ -202,4 +202,17 @@
     }
 
 }
+
+@media screen and (max-width:550px){
+    .inner{
+        height: 100%;
+        margin: 0;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .hero-top{width: 100%;}
+    .hero-left{width: 100%;}
+}
 </style>

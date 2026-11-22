@@ -100,4 +100,16 @@
     margin-left: auto;
     margin-right: 1rem;
 }
+@media screen and (max-width:1024px) {
+    .contact-bottom .contact-input{
+        width: 100%;
+    }
+}
+@media screen and (max-width:768px) {
+    .bannerTit h3{
+        letter-spacing: -3%
+    }
+}
+
+
 </style>

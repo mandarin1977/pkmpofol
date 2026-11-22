@@ -302,5 +302,29 @@ const bentoWorks = computed(() =>
     .workFocus{
         flex-direction: column;
     }
+    .workfocusTit{
+        max-width: none;
+    }
+}
+
+@media (max-width: 350px) {
+    .selectBoxtit{
+        width: 100%;
+    }
+    .workview{
+        width: 100%;
+    }
+    .workFocus{
+        width: 100%;
+    }
+    .workfocusTit h3{
+        font-size: 1em;
+    }
+    .workBento{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 }
 </style>

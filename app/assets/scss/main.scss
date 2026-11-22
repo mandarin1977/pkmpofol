@@ -4,6 +4,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    word-break: keep-all;
 }
 img{
     max-width: 100%;
@@ -14,6 +15,7 @@ html{
     body{
         font-size: 1.6rem;
         background: var(--bg);
+        
         main{
                 min-height: calc(100dvh - (9rem + 1dvw + 7rem));
         }

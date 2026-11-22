@@ -103,4 +103,10 @@ const careers = [
     font-weight: 400;
     line-height: 160%; /* 1.6rem */
 }
+
+@media (max-width: 560px) {
+    .careerUl > li > dl{
+       grid-template-columns: auto; 
+    }
+}
 </style>

@@ -10,6 +10,9 @@ header.hd{
     height: 90px;
     border-radius: 10rem;
     background: #ffffff81;
+    @media (max-width:768px){
+        height: auto;
+    }
     .inner{
         max-width: none;
         padding: 0 5rem;
@@ -17,6 +20,9 @@ header.hd{
         height: 100%;
         align-items: center;
         align-self: stretch;
+        @media (max-width:650px){
+            padding: 0 5dvw;
+        }
         .gnb{
             ul{
                 display: flex;
