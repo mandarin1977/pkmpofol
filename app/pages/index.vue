@@ -5,7 +5,6 @@
         <appeal/>
         <numberlist/>
         <selectwrok/>
-        <ectwork/>
         <career/>
         <contact/>
     </div>
@@ -13,7 +12,6 @@
 <script setup>
 import contact from '../components/maincompo/contact.vue';
 import Career from '../components/maincompo/career.vue';
-import Ectwork from '../components/maincompo/ectwork.vue';
 import Mainquick from '../components/maincompo/mainquick.vue';
 import Mainvisual from '../components/maincompo/mainvisual.vue';
 

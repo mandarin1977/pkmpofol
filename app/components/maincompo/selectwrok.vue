@@ -27,7 +27,7 @@
                         <ul>
                             <li class="workfocusSmall">
                                 <span class="small1">FEATURED</span>&nbsp;
-                                <span class="small2">{{featuredWork.worknum}}</span>
+                                <span class="small2">{{featuredWork.year}} {{featuredWork.worknum}}</span>
                             </li>
                             <li class="workfocusTit">
                                 <h3>{{featuredWork.title}}</h3>
@@ -59,7 +59,7 @@
                                         <figure>
                                             <figcaption>{{work.categories}}</figcaption>
                                             <picture>
-                                                <img src="" alt="">
+                                                <img :src="work.bindsrc">
                                             </picture>
                                         </figure>
                                     </li>
@@ -72,9 +72,9 @@
                                         </p>
                                     </li>
                                     <li>
-                                        <ul>
+                                        <ul class="workBottom">
                                             <li>
-                                                {{work.worknum}}
+                                                {{work.year}}
                                             </li>
                                             <li>
                                                 자세히 ->
@@ -97,12 +97,15 @@
 const categories = ['전체', '디자인', '퍼블리싱', 'CMS 구축', '금융 SI' , 'Front', 'ect', '개인작업']
 const act = ref('전체')
 const works = [
-    { id: 1, title: '부산남구육아종합지원센터 UI 개발', categories: ['퍼블리싱'], worknum: '2026', worktxt: '부산남구육아종합지원센터 홈페이지 화면 구축', featured: true, bindsrc: '/noImg.png' , bindherf: '/projects'},
-    { id: 2, title: 'NH농협 차세대 계정계 UI 퍼블리싱', categories: ['금융 SI'], worknum: 'FINANCIAL SYSTEM · 2026', worktxt: '복잡한 금융 업무 흐름을 이해하고, WebSquare 기반 화면을 일관된 기준으로 구현했습니다.', featured: true, bindsrc: '/noImg.png', bindherf: '/projects' },
-    { id: 3, title: '가온메탈온메탈 홈페이지 구축', categories: ['CMS 구축'], worknum: '2025', worktxt: 'cms기반 울진군체육회 홈페이지 화면 구축', featured: true, bindsrc: '/noImg.png' , bindherf: '/projects'},
-    { id: 4, title: '울진군체육회 홈페이지 UI 퍼블리싱', categories: ['퍼블리싱'], worknum: '2024', worktxt: 'cms기반 울진군체육회 홈페이지 화면 구축',featured: false , bindsrc: '/noImg.png' , bindherf: '/projects'},
-    { id: 5, title: '이모션가든', categories: ['Front'], worknum: '2024', featured: true , worktxt: '하루 일기 3줄을 적고 감정분석하면 ai가 감정을 분석하고 나서 꽃이 나오는 감정일기앱', bindsrc: '/noimg.png' , bindherf: '/projects'},
-    { id: 6, title: 'Vdesk', categories: ['퍼블리싱'], worknum: '2025', featured: false , worktxt: 'Vdesk - 웹 구동 페이지 ui제작', bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 1, title: '부산남구육아종합지원센터 UI 개발', categories: ['퍼블리싱'], year:'2026' , worknum: ' · PUBLIC WEBSITE', worktxt: '부산남구육아종합지원센터 홈페이지 화면 구축', featured: true, bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 2, title: 'NH농협 차세대 계정계 UI 퍼블리싱', categories: ['금융 SI'], year:'2026', worknum: ' · FINANCIAL SYSTEM', worktxt: '복잡한 금융 업무 흐름을 이해하고, WebSquare 기반 화면을 일관된 기준으로 구현', featured: true, bindsrc: '/noImg.png', bindherf: '/projects' },
+    { id: 3, title: '가온메탈온메탈 홈페이지 구축', categories: ['CMS 구축'], year:'2025', worknum: ' · COMPANY WEBSITE', worktxt: 'cms기반 울진군체육회 홈페이지 화면 구축', featured: true, bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 4, title: '울진군체육회 홈페이지 UI 퍼블리싱', categories: ['퍼블리싱'], year:'2024', worknum: ' · PUBLIC WEBSITE', worktxt: 'cms기반 울진군체육회 홈페이지 화면 구축',featured: false , bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 5, title: '이모션가든 유지보수', categories: ['Front'], year:'2024', worknum: ' · WEB APP', featured: true , worktxt: '하루 일기 3줄을 적고 감정분석하면 ai가 감정을 분석하고 나서 꽃이 나오는 감정일기앱', bindsrc: '/noimg.png' , bindherf: '/projects'},
+    { id: 6, title: 'Vdesk', categories: ['퍼블리싱'], year:'2025', worknum: ' · UI SYSTEM', featured: false , worktxt: 'Vdesk - 웹 구동 페이지 ui제작', bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 7, title: 'Dr.Cure', categories: ['Front'], year:'2025', worknum: ' · FRONT UI', featured: false , worktxt: '(주)코어트레이더스 자사몰 Dr.Cure cms 퍼블리싱을 통한 구축', bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 10,title: '우산재단 병원 홈페이지 이전·복원',categories: ['CMS 구축'],year: '2026',worknum: 'MEDICAL CENTER WEBSITE · 2026',worktxt: '관리 업체 폐업으로 서버 접근이 끊긴 재단 산하 사이트를 복원해 그누보드 기반으로 이전',featured: false,bindsrc: '/noImg.png',bindherf: '/projects',},    { id: 9, title: 'Vdesk', categories: ['퍼블리싱'], year:'2025', worknum: ' · UI SYSTEM', featured:false , worktxt: 'Vdesk - 웹 구동 페이지 ui제작', bindsrc: '/noImg.png' , bindherf: '/projects'},
+    { id: 10, title: 'Vdesk', categories: ['퍼블리싱'], year:'2025', worknum: ' · UI SYSTEM', featured: false , worktxt: 'Vdesk - 웹 구동 페이지 ui제작', bindsrc: '/noImg.png' , bindherf: '/projects'},
 ]
 const filtered = computed(() =>
     act.value === '전체'
@@ -140,18 +143,25 @@ const bentoWorks = computed(() =>
     line-height: 110%; /* 4.4rem */
     letter-spacing: -0.12rem;
 }
+.workview{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 2rem;
+}
 .workFocus{
     display: flex;
     min-height: 35.5rem;
     padding: var(--space-48) var(--space-40);
-    align-items: center;
     gap: var(--space-40);
     border-radius: var(--radius-card);
     background: var(--dark);
+    align-items: stretch;
 }
 .sctArea{
     flex: 1;
 }
+.leftArea { display: flex; flex-direction: column; justify-content: center; }
 .leftArea ul{
     display: flex;
     flex-direction: column;
@@ -205,7 +215,17 @@ const bentoWorks = computed(() =>
 .workfocusTit, .workfocusTxt{
     max-width: 60%;
 }
-.rightArea *{width: 100%;height: 100%;object-fit: cover;}
+.rightArea {
+  display: flex;
+}
+.rightArea figure {
+  flex: 1;
+  min-height: 300px;   /* 이미지 최소 높이 */
+  border-radius: var(--radius-image);
+  overflow: hidden;
+  /* aspect-ratio 삭제 */
+}
+.rightArea img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .workBento {
     display: grid;
@@ -216,15 +236,47 @@ const bentoWorks = computed(() =>
 .workBento > li > a > ul{
     display: flex;
     padding: 1rem;
-    min-height: 25.02438rem;
+    min-height: 42.5rem;
     flex-direction: column;
     gap: 1.125rem;
     border-radius: 1.75rem;
     background: #FFF;
 }
+.workBento > li > a > ul > li h4{
+    color: #141619;
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.025rem;
+}
 .workBento > li > a > ul > li > figure{
     width: 100%;
     height: auto;
     aspect-ratio: 237/150;
+    border-radius: 1.25rem;
+    background: #D6E7F6;
+    position: relative;
+    clip-path: fill-box;
+}
+.workBento > li > a > ul > li > figure figcaption{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+.workBento > li > a > ul > li > figure picture *{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.workBento > li > a > ul > li:nth-child(3){
+    min-height: 4.8rem;
+}
+.workBottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 </style>
