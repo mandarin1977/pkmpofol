@@ -48,9 +48,8 @@
 .contactsct{
     margin-left: 1.5dvw;
     margin-right: 1.5dvw;
-    padding-top: 2dvw;
-    padding-bottom: 2dvw;
-    background: url('/main/contact-photo.png') lightgray 50% / 100% 100% no-repeat;
+    padding-block: clamp(24px, 3vw, 48px);
+    background: url('/main/contact-photo.png') lightgray 50% / cover no-repeat;
     border-radius: var(--radius-section);
 }
 .card{
@@ -107,9 +106,25 @@
 }
 @media screen and (max-width:768px) {
     .bannerTit h3{
-        letter-spacing: -3%
+        letter-spacing: -0.03em
     }
 }
 
 
+.contact-bottom { gap: 12px; }
+.contact-bottom .contact-input {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+}
+.contact-bottom .contact-input .inputwr {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+}
+.contact-bottom .inputsbmint { flex-shrink: 0; }
+.contact-bottom li:nth-child(2) { margin-right: 0; }
+@media (max-width: 768px) {
+    .contact-bottom { padding-top: 32px; }
+}
 </style>

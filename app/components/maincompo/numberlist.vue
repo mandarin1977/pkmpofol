@@ -82,4 +82,11 @@ const numberlists = [
 .numlistul > ul > li > p{
     text-align: center;
 }
+@media (max-width: 768px) {
+    .numlistul ul {
+        margin-top: 40px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 16px;
+    }
+}
 </style>

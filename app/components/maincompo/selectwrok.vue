@@ -53,35 +53,21 @@
                 <aside class="workList">
                     <ul class="workBento">
                         <li v-for="work in bentoWorks" :key="work.id">
-                            <NuxtLink :to="work.bindherf">
-                                <ul>
-                                    <li>
-                                        <figure>
-                                            <figcaption>{{work.categories}}</figcaption>
-                                            <picture>
-                                                <img :src="work.bindsrc">
-                                            </picture>
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <h4>{{work.title}}</h4>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            {{work.worktxt}}
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <ul class="workBottom">
-                                            <li>
-                                                {{work.year}}
-                                            </li>
-                                            <li>
-                                                자세히 ->
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <NuxtLink :to="work.bindherf" class="project-card">
+                                <figure class="project-card__thumbnail">
+                                    <img v-if="work.bindsrc && !work.bindsrc.endsWith('noImg.png')"
+                                        :src="work.bindsrc" :alt="work.title" loading="lazy">
+                                    <span v-else class="project-card__placeholder" aria-hidden="true">[썸네일]</span>
+                                    <figcaption class="project-card__category">{{ work.categories.join(' · ') }}</figcaption>
+                                </figure>
+                                <div class="project-card__body">
+                                    <h4>{{ work.title }}</h4>
+                                    <p>{{ work.worktxt }}</p>
+                                    <div class="project-card__footer">
+                                        <span>{{ work.year }}</span>
+                                        <span class="project-card__more">자세히 <span aria-hidden="true">→</span></span>
+                                    </div>
+                                </div>
                             </NuxtLink>
                         </li>
                     </ul>
@@ -240,56 +226,94 @@ const bentoWorks = computed(() =>
     width: 100%;
 }
 
-.workBento > li > a > ul{
+.workBento > li { min-width: 0; }
+.project-card {
     display: flex;
-    padding: 1rem;
-    min-height: 42.5rem;
     flex-direction: column;
-    gap: 1.125rem;
-    border-radius: 1.75rem;
-    background: #FFF;
+    height: 100%;
+    padding: 12px;
+    border-radius: 28px;
+    background: var(--surface);
+    color: var(--ink);
 }
-.workBento > li > a > ul > li h4{
-    color: #141619;
-    font-size: 1.2em;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: -0.025rem;
+.project-card:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
 }
-.workBento > li > a > ul > li > figure{
-    width: 100%;
-    height: auto;
-    aspect-ratio: 237/150;
-    border-radius: 1.25rem;
-    background: #D6E7F6;
+.project-card__thumbnail {
     position: relative;
-    clip-path: fill-box;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 237 / 150;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #D6E7F6;
 }
-.workBento > li > a > ul > li > figure figcaption{
+.project-card__thumbnail img {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-}
-.workBento > li > a > ul > li > figure picture *{
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
-.workBento > li > a > ul > li:nth-child(3){
-    min-height: 4.8rem;
+.project-card__placeholder { color: #5B6571; font-size: 14px; }
+.project-card__category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    padding: 7px 12px;
+    border-radius: var(--radius-button);
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
 }
-.workBottom{
+.project-card__body {
     display: flex;
-    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px 8px 8px;
+}
+.project-card__body h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+}
+.project-card__body > p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #5B6571;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+.project-card__footer {
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #E4E8EC;
+    color: #5B6571;
+    font-size: 15px;
+}
+.project-card__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-weight: 500;
 }
 
 @media (max-width: 1080px) {
     .workBento {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     }
 }
 @media (max-width: 810px) {
@@ -326,5 +350,16 @@ const bentoWorks = computed(() =>
         flex-wrap: wrap;
         flex-direction: column;
     }
+}
+.selectBoxtit, .workview { width: 100%; min-width: 0; }
+.selectBoxtit { gap: 20px; }
+.selectTab { flex-wrap: wrap; flex-shrink: 1; }
+@media (max-width: 1080px) {
+    .selectBoxtit { flex-direction: column; align-items: flex-start; }
+    .selectTab { justify-content: flex-start; }
+}
+@media (max-width: 650px) {
+    .workfocusTit, .workfocusTxt { max-width: 100%; }
+    .workfocusSmall { flex-wrap: wrap; }
 }
 </style>

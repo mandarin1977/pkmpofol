@@ -55,4 +55,7 @@ const candos = [
 .appealpointul{width: 100%;}
 .appealpointul ul{display: grid;grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));gap: 2.4rem;}
 
+@media (max-width: 768px) {
+    .inner { row-gap: 40px; }
+}
 </style>

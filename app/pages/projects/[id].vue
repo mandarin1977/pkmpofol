@@ -1,6 +1,6 @@
 <template>
-    <p v-if="status === 'pending'">불러오는중...</p>
-    <p v-else-if="error">오류 : {{error.message}}</p>
+    <p class="case-state" v-if="status === 'pending'">불러오는중...</p>
+    <p class="case-state" v-else-if="error">오류 : {{error.message}}</p>
 
     <article v-else-if="project" class="case">
       <header class="case-head">
@@ -27,7 +27,7 @@
         </div>
       </dl>
 
-      <a v-if="project.site_url" :href="project.site_url" target="_blank" rel="non">
+      <a class="case-site" v-if="project.site_url" :href="project.site_url" target="_blank" rel="noopener noreferrer">
         라이브 사이트 ↗
       </a>
 
@@ -62,10 +62,10 @@
   <!-- 이전/다음 -->
   <nav class="case-nav" aria-label="다른 프로젝트">
     <!-- 아래 3번 참고 -->
-    <NuxtLink v-if="prev" :to="`/projects/${prev.id}`">
+    <NuxtLink class="case-nav-prev" v-if="prev" :to="`/projects/${prev.id}`">
       <span>← PREV</span><strong>{{ prev.title }}</strong>
     </NuxtLink>
-    <NuxtLink v-if="next" :to="`/projects/${next.id}`">
+    <NuxtLink class="case-nav-next" v-if="next" :to="`/projects/${next.id}`">
       <span>NEXT →</span><strong>{{ next.title }}</strong>
     </NuxtLink>
   </nav>  
@@ -116,3 +116,182 @@ const prev = computed(() => siblings.value?.[currentIndex.value - 1])
 const next = computed(() => siblings.value?.[currentIndex.value + 1])
 
 </script>
+
+<style scoped>
+.case,
+.case-nav,
+.case-state {
+  --case-line: #d0d0ca;
+  --case-muted: #65655f;
+  --case-gap: clamp(56px, 7vw, 120px);
+  width: min(calc(100% - 40px), 1520px);
+  margin-inline: auto;
+  color: var(--ink, #222);
+  box-sizing: border-box;
+}
+.case { padding-top: clamp(32px, 4vw, 72px); }
+.case-state { padding-block: 48px; }
+.case *, .case-nav * { box-sizing: border-box; }
+.case h2, .case h3, .case p, .case dl, .case dd,
+.case figure, .case ul { margin: 0; }
+.case p, .case dd, .case h2, .case h3, .case-nav strong {
+  overflow-wrap: anywhere;
+}
+.case .eyebrow {
+  color: var(--case-muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.case-head h2 {
+  margin-top: 20px;
+  font-size: clamp(32px, 3vw, 52px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+.case-head .summary {
+  max-width: 960px;
+  margin-top: 24px;
+  color: var(--ink-2, #555);
+  font-size: clamp(16px, 1.2vw, 20px);
+  line-height: 1.8;
+}
+.case .case-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 3fr);
+  gap: 24px;
+  margin-top: 40px;
+  padding-block: 20px;
+  border-top: 1px solid var(--ink, #222);
+  border-bottom: 1px solid var(--case-line);
+}
+.case-meta > div { min-width: 0; }
+.case-meta dt {
+  margin-bottom: 8px;
+  color: var(--case-muted);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.case-meta dd { font-size: 14px; line-height: 1.7; }
+.case-site {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 18px;
+  padding: 10px 18px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  color: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.case .case-main {
+  margin-top: 40px;
+  overflow: hidden;
+  border: 1px solid var(--case-line);
+  border-radius: 12px;
+  background: #e3e3df;
+}
+.case-main img { display: block; width: 100%; height: auto; }
+.case-story {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 5vw, 80px);
+  margin-top: var(--case-gap);
+  padding: clamp(32px, 4vw, 64px);
+  border-block: 1px solid var(--case-line);
+  background: #ecece8;
+}
+.case-story > div { min-width: 0; }
+.case-story h2, .case-points > h2 {
+  margin-top: 16px;
+  font-size: clamp(24px, 2vw, 32px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+}
+.case-story h2 + p {
+  margin-top: 20px;
+  color: var(--ink-2, #555);
+  font-size: 15px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+.case-points { margin-top: var(--case-gap); }
+.case-points > ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+  padding: 0;
+  list-style: none;
+}
+.case-points > ul > li {
+  min-width: 0;
+  padding: 20px;
+  border: 1px dashed #aaa;
+  border-radius: 12px;
+}
+.case-points figure {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e3e3df;
+}
+.case-points figure img { display: block; width: 100%; height: auto; }
+.case-points h3 { margin-top: 16px; font-size: 18px; font-weight: 600; line-height: 1.5; }
+.case-points h3:first-child { margin-top: 0; }
+.case-points h3 + p {
+  margin-top: 10px;
+  color: var(--ink-2, #555);
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+.case-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: var(--case-gap);
+  padding-block: 32px;
+  border-block: 1px solid var(--case-line);
+}
+.case-nav:empty { display: none; }
+.case-nav > a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(100%, 520px);
+  min-width: 0;
+  padding: 24px;
+  border: 1px dashed #aaa;
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+.case-nav span { color: var(--case-muted); font-size: 11px; line-height: 1.5; }
+.case-nav strong { font-size: 16px; line-height: 1.6; }
+.case-nav-prev { grid-column: 1; }
+.case-nav-next { grid-column: 2; justify-self: end; text-align: right; }
+.case-site:focus-visible, .case-nav > a:focus-visible {
+  outline: 2px solid var(--ink, #222);
+  outline-offset: 4px;
+}
+@media (max-width: 1024px) {
+  .case .case-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-points > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .case-head .summary { margin-top: 16px; }
+  .case .case-meta { gap: 24px 16px; margin-top: 28px; }
+  .case-story { grid-template-columns: minmax(0, 1fr); gap: 36px; padding: 28px 20px; }
+  .case-points > ul { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 24px; }
+  .case-nav { gap: 12px; padding-block: 24px; }
+  .case-nav > a { padding: 16px; }
+  .case-nav strong { font-size: 14px; }
+}
+</style>

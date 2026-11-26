@@ -66,10 +66,10 @@ const careers = [
 }
 .careerUl > li > dl{
     display: grid;
-    grid-template-columns: 20% 30% auto;
+    grid-template-columns: minmax(160px, 20%) minmax(0, 30%) minmax(0, 1fr);
     padding: var(--space-32) 0;
     align-items: center;
-    gap: var(--layout-gutter);
+    gap: 20px;
     border-top: 1px solid var(--line);
 }
 .careerUl > li > dl .careerDate{
@@ -104,9 +104,26 @@ const careers = [
     line-height: 160%; /* 1.6rem */
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
     .careerUl > li > dl{
-       grid-template-columns: auto; 
+       grid-template-columns: minmax(0, 1fr);
+       gap: 10px;
     }
+}
+.careerTit {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.careerUl > li > dl .careerTit span {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+@media (max-width: 768px) {
+    .inner { row-gap: 40px; }
 }
 </style>

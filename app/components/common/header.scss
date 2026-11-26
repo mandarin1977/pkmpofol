@@ -122,3 +122,16 @@ header.hd{
     display: none;                /* 열어둔 채로 PC 폭이 되면 숨김 */
   }
 }
+header.hd .mo-btn {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}

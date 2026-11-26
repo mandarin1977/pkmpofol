@@ -52,7 +52,7 @@
                 </button>
             </div>
             <Teleport to="#teleports">
-                <nav class="mo-menu" v-show="isOpen">
+                <nav id="mo-menu" class="mo-menu" v-show="isOpen">
                         <ul class="mognb">
                             <li v-for="menu in menus" aria-label="메인메뉴" :key="menu.path">
                                 <NuxtLink :to="menu.path">
